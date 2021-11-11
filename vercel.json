@@ -8,6 +8,11 @@
       {
         "src": "/user/.*",
         "dest": "api/user.js"
+      },
+      {
+        "src": "/404",
+        "dest": "api/404.js"
+
       }
      
     ]
