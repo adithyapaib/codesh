@@ -23,7 +23,7 @@
         "dest": "api/save.js"
       },
       {
-        "src": "/*",
+        "src": "/.*",
         "dest": "api/redirect.js"
       }
 
