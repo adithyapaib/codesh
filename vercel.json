@@ -13,6 +13,10 @@
         "src": "/404",
         "dest": "api/404.js"
 
+      },
+      {
+        "src": "/new/.*",
+        "dest": "api/new.js"
       }
      
     ]
