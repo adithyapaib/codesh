@@ -1,4 +1,14 @@
 import mongoose from "mongoose";
 import Model from "../models/Model";
+import express from "express";
 require("dotenv").config();
-export default async (req, res) => await mongoose.connect(process.env.DB) ? await (await Model.find({username: req.url.split('/user/')[1]})).length >0 ? res.redirect("/404"):res.status(200).json(false).end() : res.status(500).json(false).end();
+const app = express();
+app.set('view engine', 'ejs');
+app.get('/new/:id', async (req, res) => {
+    const id = req.params.id;
+    await mongoose.connect(process.env.DB);
+    let user = await Model.find({ username: req.url.split('/user/')[1] }).length > 0 ? true : false;
+    (user) ? res.redirect('/404') : res.render('new', { username: id });
+})
+
+export default app;
