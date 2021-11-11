@@ -17,7 +17,16 @@
       {
         "src": "/new/.*",
         "dest": "api/new.js"
+      },
+      {
+        "src": "/save",
+        "dest": "api/save.js"
+      },
+      {
+        "src": "/*",
+        "dest": "api/redirect.js"
       }
+
      
     ]
   }
