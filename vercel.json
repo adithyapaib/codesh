@@ -15,10 +15,6 @@
 
       },
       {
-        "src": "/52",
-        "dest": "api/52.js"
-      },
-      {
         "src": "/new/.*",
         "dest": "api/new.js"
       },
