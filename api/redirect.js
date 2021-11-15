@@ -2,7 +2,6 @@ import express from 'express';
 const app = express(); 
 import mongoose from "mongoose";
 import Model from "../models/Model";    
-app.set('view engine', 'ejs');
 require("dotenv").config();
 app.get('/:id', async(req, res) => {
     await mongoose.connect(process.env.DB)
