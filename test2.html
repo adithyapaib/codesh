@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+<!DOCTYPE html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textspace  <%= locals.username  %> </title> 
+    <link rel="stylesheet" href="/code.css" />
+    <meta name="theme-color" content="#ffd523">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="https://img.icons8.com/emoji/48/000000/globe-showing-americas-emoji.png" type="image/x-icon">
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
 * {
   margin: 0;
@@ -136,21 +145,19 @@ body {
   background: #ffd523;
   border-radius: 0.5em;
 }
+/*# sourceMappingURL=code.css.map */
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js"></script>
-    <title>Editing ${username}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"/>
-    <script language="javascript" type="text/javascript" src="/static/js/codemirror-5.62.0/lib/codemirror.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/js/codemirror-5.62.0/lib/codemirror.css"></link>
-    <link rel="icon" href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png" />
+  </style>
+
+
 </head>
 
-<body >
+  <body >
     <header class="newheader">
-        <span> <i class="bi bi-back" style="color: black;"></i><h3>${username}  </h3></span>
+        <span> <i class="bi bi-back" style="color: black;"></i><h3><%= locals.username %>  </h3></span>
          <span> <button class="copy" >Copy URL <i class="bi bi-clipboard"></i> </button>  <a href="/"><i class="bi bi-house-fill"></i></span></a>
        </header>
-    <div class="wrapper"><p class="codeheader">${code}</p></div>
+    <div class="wrapper"><p class="codeheader"><%- locals.code %></p></div>
     <script>
       var b = document.querySelector(".copy");
       b.addEventListener("click", function() {
@@ -165,5 +172,4 @@ alert("URL Copied.");
     });
     </script>
   </body>
-
 </html>
