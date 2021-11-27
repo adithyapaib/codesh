@@ -1,4 +1,2 @@
-const app   require("express")();
-app.set('view engine', 'ejs');
-app.get('/404', (req, res) => res.render('404'))
-export default app;
+import a from './html/404'
+export default require('express')().get('/', (req, res) => res.status(200).send(a).end())
