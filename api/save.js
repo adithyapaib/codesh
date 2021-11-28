@@ -1,3 +1,4 @@
+/* Saves the code sent via POST request */
 import express from 'express';
 const app = express(); 
 import mongoose from "mongoose";
