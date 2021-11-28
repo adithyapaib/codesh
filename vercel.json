@@ -19,6 +19,10 @@
         "dest": "api/new.js"
       },
       {
+        "src": "/all",
+        "dest": "api/all.js"
+      },
+      {
         "src": "/save",
         "dest": "api/save.js"
       },
