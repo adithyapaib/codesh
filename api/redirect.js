@@ -1,5 +1,4 @@
-import express from 'express';
-const app = express();
+const app = require('express')();
 import html from './html/404'
 import codeFn from './html/code'
 import mongoose from "mongoose";
