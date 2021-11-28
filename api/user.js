@@ -1,3 +1,4 @@
+/* Checks if the user exists in the database */
 import mongoose from "mongoose";
 import Model from "../models/Model";
 require("dotenv").config();
