@@ -1,8 +1,11 @@
-const newcode = `
-<!DOCTYPE html>
+export default async function newFn (username) {
+	console.log('Inside newFn' + username);
+	return `
+	<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -209,9 +212,6 @@ const newcode = `
 	</script>
 </body>
 
-</html>`
-
-export default newcode
-
-
-
+</html>
+	`
+}
