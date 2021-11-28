@@ -1,4 +1,6 @@
 
+/* generate random color wiht #*/
+let color = "#" + Math.random().toString(16).substring(2, 8).toUpperCase();
 const a = `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -26,7 +28,7 @@ const a = `<!DOCTYPE html>
             <path id="feel-the-wave" d=""/>
          </svg>
       </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script> <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script> <script>document .querySelector(".btn") .addEventListener("click", async function (){let userId=prompt("Enter a id for your space"); userId=userId.trim(); userId=userId.replace(/\s/g, ""); if (userId){let userRegistered=await fetch("/user/" + userId); console.log(userRegistered); userRegistered=await userRegistered.json(); if (userRegistered){alert("The user space already exists ");}else{window.location.href="/new/" + userId;}}}); var wave1=$("#feel-the-wave").wavify({height: 80, bones: 4, amplitude: 60, color: "#5C7AEA", speed: 0.25,}); </script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script> <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script> <script>document .querySelector(".btn") .addEventListener("click", async function (){let userId=prompt("Enter a id for your space"); userId=userId.trim(); userId=userId.replace(/\s/g, ""); if (userId){let userRegistered=await fetch("/user/" + userId); console.log(userRegistered); userRegistered=await userRegistered.json(); if (userRegistered){alert("The user space already exists ");}else{window.location.href="/new/" + userId;}}}); var wave1=$("#feel-the-wave").wavify({height: 80, bones: 4, amplitude: 60, color: '${color}', speed: 0.25,}); </script> 
    </body>
 </html>`
 
