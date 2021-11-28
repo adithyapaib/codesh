@@ -9,12 +9,7 @@ app.set('view engine', 'ejs');
 app.get('/new/:id', async(req, res) => {
     let username = await req.params.id;
     await mongoose.connect(process.env.DB);
-    let data = await Model.findOne({ username: username });
-    console.log(data);
-    if(data === null) {let html = await newFn(username);
-    console.log(html + '\n' + username);
-    res.send(html);}
-    else {await res.redirect(`/${username}`);console.log('redirected')}
+    (await Model.findOne({ username: username }) == null )? await res.send(await newFn(username)) : await res.redirect(`/${username}`)
 })
 
 export default app;
