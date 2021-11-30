@@ -13,6 +13,7 @@ Install codesh with npm
   git clone https://github.com/adithyapaib/codesh
   cd codesh
   npm i
+  vercel dev 
 ```
 * configure the .env file with your mongoDB uri
     
