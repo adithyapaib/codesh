@@ -18,7 +18,7 @@ Install codesh with npm
 * configure the .env file with your mongoDB uri
     
 
-#### ⭐ Tech Stack
+## ⭐ Tech Stack
 Client: HTML, SCSS, JS, Bootstrap
 Server: Node,TS, MongDB, Vercel Serveless function.
     
