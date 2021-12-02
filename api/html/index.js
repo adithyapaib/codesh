@@ -153,7 +153,7 @@ const a = `
         integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <title>codesh ⛺ | A textSpace for your links</title>
+    <title>codesh  📝| A textSpace for your links</title>
 </head>
 
 <body>
