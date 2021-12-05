@@ -45,6 +45,6 @@ To run this project, you will need to add the following environment variables to
 
 
 
-## License
+## 🔰 License
 
 [MIT](https://choosealicense.com/licenses/mit/)
