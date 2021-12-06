@@ -26,7 +26,11 @@ Server: Node,TS, MongDB, Vercel Serveless function.
 
 ## 📸 Screenshots
 
+#### Homepage
+
 ![App Screenshot](https://github.com/adithyapaib/codesh/blob/3c7861ccb287a15955df6c526183a70aeeb225a7/screenshot/ss1.png)
+
+#### Editor 
 
 ![App Screenshot](https://github.com/adithyapaib/codesh/blob/b1b309c545237c6360c70a850730eb0286a21156/screenshot/ss2.png)
 
