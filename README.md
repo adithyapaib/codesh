@@ -1,6 +1,6 @@
 
 
-# 🎫 codeSh
+# 🎫 CodeSH
 
 codesh is a codesharing platform that is API based using NodeJS for back-end, Express for servering and MongoDB as a Database, This is a serverless app that dosen't require a 24/7 running server.
 
