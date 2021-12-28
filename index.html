@@ -1,179 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(async function () { let con = await fetch("/user/adi"); })();</script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+        @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap);
 
         * {
             margin: 0;
             padding: 0;
-            font-family: "Poppins", sans-serif;
-            max-width: 100%;
+            color: #fff;
+            font-family: Montserrat, sans-serif
         }
 
         body {
-            background-color: #171717;
-        }
-
-        .newheader {
-            top: 0;
-            position: -webkit-sticky;
-            position: sticky;
-            z-index: 10000;
-            background: #ffd523;
-            color: #2c2e43 !important;
             max-width: 100%;
-            padding: 1em;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .newheader h3 {
-            margin-left: 0.5em;
-            color: #2c2e43 !important;
-            font-size: 1em;
-        }
-
-        .newheader span {
-            min-width: 10%;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            font-size: 1.5em;
-        }
-
-        .newheader span .btn {
-            background: red;
-        }
-
-        .newheader span .copy {
-            background: #0a1931;
-            padding: 0.6em;
-            border-radius: 0.5em;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            outline: none;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
+            background: #171717
         }
 
-        .newheader span .copy i {
-            color: #fff !important;
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background: #171717
         }
 
-        .newheader span i {
-            margin-left: 1em;
-            color: #2c2e43 !important;
+        .container .top {
+            height: 70%;
+            width: 60%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, .65);
+            -webkit-box-shadow: 0 8px 32px 0 #4c51a05e;
+            box-shadow: 0 8px 32px 0 #4c51a05e;
+            backdrop-filter: blur(15.5px);
+            -webkit-backdrop-filter: blur(15.5px);
+            border-radius: 10px;
+            border: 1px solid #0000002e
         }
 
-        .newheader span .btn {
-            background: #0a1931;
-            font-size: 0.6em;
-            font-weight: 600;
-            padding: 0.5em 1em;
+        .container h2 {
+            font-weight: 800 bold
         }
 
-        .newheader span .btn i {
-            color: whitesmoke !important;
+        .container .wave {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            height: 50vh;
+            max-width: 100%;
+            overflow-x: hidden
         }
 
-        .wrapper {
-            position: relative;
-            margin-top: 10em;
-            padding: 1em;
-            min-height: 100vh;
-            max-width: 100% !important;
-            background: #171717;
-            color: whitesmoke;
-        }
-
-        .wrapper p {
-            max-width: 100vw !important;
-            word-wrap: break-word;
-        }
-
-        .wrapper p a {
-            color: #41e033;
+        .container #btn {
             text-decoration: none;
+            background: #fff;
+            color: #2c2e43;
+            padding: .75em 1.5em;
+            margin-top: 3em;
+            border-radius: 3px;
+            font-weight: 600
         }
 
-        .wrapper p a::after {
-            content: " ↥";
-        }
-
-        ::-webkit-scrollbar {
-            background: #171717;
-            padding: 10em;
-            width: 10px;
+        .container #btn i {
+            color: #171717;
+            font-size: 1em;
+            margin-left: .5em;
+            background: 0 0
         }
 
         ::-webkit-scrollbar-thumb {
-            margin: 2em;
-            background: #ffd523;
-            border-radius: 0.5em;
+            background-color: #2c2e43;
+            border-radius: 10px
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #5c7aea
+        }
+
+        @media screen and (max-width:768px) {
+            .container .top {
+                width: 90%;
+                padding: 1em;
+                word-wrap: break-word;
+                text-align: center;
+            }
+            .container .top .spand 
+            {
+                font-size: 0.8em;
+                display: flex;
+                justify-content: space-between;
+            align-items: center;            }
+        }
+        .container .top .spand #btn {
+            margin: 1em;
+            
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js"></script>
-    <title>${username}</title>
-    <meta name="description" content="${username}">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5C7AEA">
+    <link rel="icon" href="https://img.icons8.com/emoji/50/000000/flower-playing-cards.png" />
+    <meta name="description" content="A Textspace for all your content and link for clubhouse." />
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" />
-    <script language="javascript" type="text/javascript" src="/static/js/codemirror-5.62.0/lib/codemirror.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/js/codemirror-5.62.0/lib/codemirror.css">
-    </link>
-    <link rel="icon" href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png" />
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+        integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>codesh ⛺ | A textSpace for your links</title>
 </head>
 
 <body>
-    <header class="newheader"> <span> <i class="bi bi-back" style="color: black;"></i>
-            <h3>${username}</h3>
-        </span> <span>
-            <button class="copy copyCode"  style="margin-right: 10px;">Copy code <i class="bi bi-clipboard "> </i> </button>    
-            
-            <button class="copy copyUrl">Copy URL <i class="bi bi-link"></i> </button> <a href="/"><i
-                    class="bi bi-house-fill"></i></span></a> </header>
-    <div class="wrapper">
-        <p class="codeheader"> ${code} </p>
+    <div class="container">
+        <div class="top">
+            <h2>Get the shortest link for your Code !</h2>
+            <span style="margin-top: 2em;" class="spand"><a class="btn" id="btn">Custom paste<i class="bi bi-plus-square"></i></a>
+                <a class="randBtn" id="btn" style="background: #E02401" ; cursor: pointer;>Random paste<i
+                        class="bi bi-plus-square"></i></a> </span>
+        </div>
+        <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave">
+            <defs></defs>
+            <path id="feel-the-wave" d="" />
+        </svg>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js">
+    </script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
     <script>
-    var a = document.querySelector(".copyCode");
-    a.addEventListener("click", function() {
-        var c= document.querySelector(".codeheader");
-        var text = c.innerText;
-        var textArea = document.createElement("textarea");
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand("copy");
-        textArea.remove();
-        alert("Copied the text: " + text);
-    });
-    var b = document.querySelector(".copyUrl"); b.addEventListener("click", function () { var inputc = document.body.appendChild(document.createElement("input")); inputc.value = window.location.href; inputc.focus(); inputc.select(); document.execCommand('copy'); inputc.parentNode.removeChild(inputc); alert("URL Copied."); }); </script>
+        document.querySelector(".btn").addEventListener("click", async function () { let userId = prompt("Enter a id for your space"); userId = userId.trim(); userId = userId.replace(/\s/g, ""); if (userId) { let userRegistered = await fetch("/user/" + userId); console.log(userRegistered); userRegistered = await userRegistered.json(); if (userRegistered) { alert("The user space already exists "); } else { window.location.href = "/new/" + userId; } } }); var wave1 = $("#feel-the-wave").wavify({ height: 80, bones: 4, amplitude: 60, color: '${color}', speed: 0.25, });</script>
+    <script>
+        let randBtn = document.querySelector(".randBtn");
+        randBtn.addEventListener("click", async function () {
+            let userId = Math.random().toString(36).substring(7);
+            userId ? window.location.href = "/new/" + userId : null;
+        });
+    </script>
 </body>
 
 </html>
