@@ -27,7 +27,7 @@ app.post('/save', async(req, res) => {
 
 
 
-  let value = await body;
+  let value = await body.trim();
   
 
   try {
