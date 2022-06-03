@@ -12,14 +12,11 @@ app.post('/save', async(req, res) => {
   let  username = await req.body.username;
   console.log(body);
   body = await detectURLs(body)
-  body = await body.replace(/\n/g, '<br>')
- 
   body = await body.replace(/</g, '&lt;');
   body = await body.replace(/>/g, '&gt;');
-  body = await body.replace(/\n/g, '<br>');
+
   body = await body.replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
    /* replace & with &amp;*/
-  body = await body.replace(/&/g, '&amp;');
   /* replace " wiht &quot; */
   body = await body.replace(/"/g, '&quot;');
   /* replace ' with &apos; */
@@ -28,6 +25,7 @@ app.post('/save', async(req, res) => {
 
 
   let value = await body.trim();
+  console.log( "Saved value " + value);
   
 
   try {

@@ -16,7 +16,7 @@ app.get('/:id', async(req, res) => {
   
   f = await codeFn(username,code);
   }
- await document ?  await res.render(f).status(200) : await res.send(html).status(404) 
+ await document ?  await res.send(f).status(200) : await res.send(html).status(404) 
 });
 
 export default app;
