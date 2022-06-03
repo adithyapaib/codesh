@@ -13,6 +13,7 @@ app.get('/:id', async(req, res) => {
   let document = await Model.findOne({ username: id });
   if( await document) {  // if the document exists
   let username = await document.username, code = await document.value;
+  
   f = await codeFn(username,code);
   }
  await document ?  await res.send(f).status(200) : await res.send(html).status(404) 
