@@ -27,7 +27,7 @@ app.post('/save', async(req, res) => {
 
 
 
-  let value = await `<p class="saved">${body} </p>`
+  let value = await `<pre class="saved">${body} </pre>`
   
 
   try {
