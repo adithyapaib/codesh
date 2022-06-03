@@ -14,7 +14,7 @@ app.get('/:id', async(req, res) => {
   if( await document) {  // if the document exists
   let username = await document.username, code = await document.value;
   
-  f = await codeFn(username,code,res);
+  f = await codeFn(username,code);
   }
  await document ?  await res.render(f).status(200) : await res.send(html).status(404) 
 });
