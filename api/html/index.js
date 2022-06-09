@@ -177,7 +177,7 @@ const a = `
     </script>
     <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
     <script>
-        document.querySelector(".btn").addEventListener("click", async function () { let userId = prompt("Enter a id for your space"); userId = userId.trim().replace(/\s/g, ""); if (userId) { let userRegistered = await fetch("/user/" + userId); console.log(userRegistered); userRegistered = await userRegistered.json(); if (userRegistered) { alert("The user space already exists "); } else { window.location.href = "/new/" + userId; } } }); var wave1 = $("#feel-the-wave").wavify({ height: 80, bones: 4, amplitude: 60, color: '${color}', speed: 0.25, });</script>
+        document.querySelector(".btn").addEventListener("click", async function () { let userId = prompt("Enter a id for your space"); userId = userId.trim(); if (userId) { let userRegistered = await fetch("/user/" + userId); console.log(userRegistered); userRegistered = await userRegistered.json(); if (userRegistered) { alert("The user space already exists "); } else { window.location.href = "/new/" + userId; } } }); var wave1 = $("#feel-the-wave").wavify({ height: 80, bones: 4, amplitude: 60, color: '${color}', speed: 0.25, });</script>
     <script>
         let randBtn = document.querySelector(".randBtn");
         randBtn.addEventListener("click", async function () {
