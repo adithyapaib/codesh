@@ -142,6 +142,14 @@ const a = `
             
         }
     </style>
+    <script>
+    (async function () {
+        let con = await fetch("/user/test");
+        let data = await con.json();
+        console.log("Test connection " + data);
+    }
+    )();
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -176,8 +184,7 @@ const a = `
     <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js">
     </script>
     <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
-    <script>
-        document.querySelector(".btn").addEventListener("click", async function () { let userId = prompt("Enter a id for your space"); userId = userId.trim(); if (userId) { let userRegistered = await fetch("/user/" + userId); console.log(userRegistered); userRegistered = await userRegistered.json(); if (userRegistered) { alert("The user space already exists "); } else { window.location.href = "/new/" + userId; } } }); var wave1 = $("#feel-the-wave").wavify({ height: 80, bones: 4, amplitude: 60, color: '${color}', speed: 0.25, });</script>
+    <script>document.querySelector(".btn").addEventListener("click",async function(){let a=prompt("Enter a id for your space");if(a=(a=a.trim()).replaceAll(" ",""),new RegExp(/^[a-zA-Z0-9 ]*$/).test(a)){let b=await fetch("/user/"+a);console.log(b),(b=await b.json())?alert("The user space already exists "):window.location.href="/new/"+a}else alert("Only alphabets and numbers allowed !!")});var wave1=$("#feel-the-wave").wavify({height:80,bones:4,amplitude:60,color:"${color}",speed:.25})</script>
     <script>
         let randBtn = document.querySelector(".randBtn");
         randBtn.addEventListener("click", async function () {
