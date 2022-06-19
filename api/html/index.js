@@ -199,7 +199,7 @@ const a = `
         
     </div>
     <footer>
-        <section > Version 3.6.0 <br> Site by <a href="http://adithyapai.com" target="_blank" rel="noopener noreferrer">Adtihya Pai B 👀</a></section>
+        <section > Version 4.0.0 <br> Site by <a href="http://adithyapai.com" target="_blank" rel="noopener noreferrer">Adtihya Pai B 👀</a></section>
      </footer>
    
 

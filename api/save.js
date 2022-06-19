@@ -11,7 +11,6 @@ app.post('/save', async(req, res) => {
   let body = await req.body.value;
   let  username = await req.body.username;
   console.log(body);
-  body = await detectURLs(body)
   body = await body.replace(/</g, '&lt;');
   body = await body.replace(/>/g, '&gt;');
 
