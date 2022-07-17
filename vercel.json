@@ -27,6 +27,10 @@
         "dest": "api/save.js"
       },
       {
+        "src": "/exam/.*",
+        "dest": "api/exam.js"
+      },
+      {
         "src": "/.*",
         "dest": "api/redirect.js"
       }
