@@ -19,7 +19,7 @@ export default async function examCodeFn(username, code) {
              <pre style="font-size: 0.10em; line-height: 2em; color: #F2F2F2;" class="codeheader" id="code">${code}</pre>
           </div>
           <script>
-            document.getElementById("btn").('click', function(event) {
+            document.getElementById("btn").addEventListener('click', function(event) {
                var textArea = document.createElement("textarea");
                textArea.value = document.getElementById("code").textContent;
                document.body.appendChild(textArea);
