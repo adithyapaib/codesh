@@ -15,7 +15,7 @@ export default async function examCodeFn(username, code) {
        </head>
        <body > 
           <div class="wrapper">
-             <pre style="font-size: 0.1em; line-height: 2em; color: #f4eeff;" class="codeheader" id="code">${code}</pre>
+             <pre style="font-size: 0.10em; line-height: 2em; color: #f4eeff;" class="codeheader" id="code">${code}</pre>
           </div>
           <script>
             document.body.addEventListener('click', function(event) {
