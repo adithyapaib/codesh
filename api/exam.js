@@ -4,7 +4,7 @@ import examCodeFn from './html/examCode'
 import mongoose from "mongoose";
 import Model from "../models/Model";    
 require("dotenv").config();
-app.get('/exam/:id', async(req, res) => {
+app.get('/e/:id', async(req, res) => {
   let f = `<HTML>Hi</html>`
   await mongoose.connect(process.env.DB)
   let id = await req.params.id;

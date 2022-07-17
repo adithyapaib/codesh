@@ -197,7 +197,7 @@ const a = `
         
     </div>
     <footer>
-        <section > Version 5.0.2 <br> Site by <a href="http://adithyapai.com" target="_blank" rel="noopener noreferrer">Adtihya Pai B 👀</a></section>
+        <section > Version 6.0.0 <br> Site by <a href="http://adithyapai.com" target="_blank" rel="noopener noreferrer">Adtihya Pai B 👀</a></section>
      </footer>
    
 

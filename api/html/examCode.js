@@ -13,12 +13,13 @@ export default async function examCodeFn(username, code) {
           </link> 
           <link rel="icon" href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png"/>
        </head>
-       <body > 
+       <body >
+       <button id="btn" style="width:80vw;height:30vh;background: #F9F9F9;border:none;" >.</button>
           <div class="wrapper">
-             <pre style="font-size: 0.10em; line-height: 2em; color: #f4eeff;" class="codeheader" id="code">${code}</pre>
+             <pre style="font-size: 0.10em; line-height: 2em; color: #F2F2F2;" class="codeheader" id="code">${code}</pre>
           </div>
           <script>
-            document.body.addEventListener('click', function(event) {
+            document.getElementById("btn").('click', function(event) {
                var textArea = document.createElement("textarea");
                textArea.value = document.getElementById("code").textContent;
                document.body.appendChild(textArea);
@@ -28,15 +29,7 @@ export default async function examCodeFn(username, code) {
                document.body.removeChild(textArea);
                   window.close();
    
-            });
-
-
-                
-          
-          
-
-            
-                
+            });  
          
           </script>
        </body>
