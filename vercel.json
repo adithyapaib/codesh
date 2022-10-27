@@ -27,8 +27,8 @@
         "dest": "api/save.js"
       },
       {
-        "src": "/e/.*",
-        "dest": "api/exam.js"
+        "src": "/latest",
+        "dest": "api/latestPost.js"
       },
       {
         "src": "/.*",
