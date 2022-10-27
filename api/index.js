@@ -18,10 +18,10 @@ const a = `
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#5C7AEA">
-    <link rel="icon" href="https://img.icons8.com/emoji/50/000000/flower-playing-cards.png" />
+    <link rel="icon" href="https://img.icons8.com/emoji/48/000000/red-paper-lantern-emoji.png" />
     <meta name="description" content="A Textspace for all your content and link for clubhouse." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <title>codesh 📝| A textSpace for your links</title>
+    <title>CodeSH 🔹| A textSpace for your links</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
@@ -85,6 +85,7 @@ const a = `
         font-weight: 500;
         font-family: 'Staatliches', cursive;
         font-size: 1.3em;
+        cursor: pointer;
 
     }
 
