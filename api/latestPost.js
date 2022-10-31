@@ -18,7 +18,7 @@ app.get('/latest', async(req, res) => {
   let returnHTML = "";
   latestCode.forEach(element => {
     console.log(element);
-    returnHTML +=  `<div id="card"><h2 > <a href="/${element.username}">${element.username}</a> </h2><pre>${element.value.substring(0,30)}...</pre></div>`
+    returnHTML +=  `<div id="card" href="/${element.username}">${element.username} ><h2 > <a href="/${element.username}">${element.username}</a> </h2><pre>${element.value.substring(0,30)}...</pre></div>`
   });
 
   res.status(200).send(returnHTML).end();
