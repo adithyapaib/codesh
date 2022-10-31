@@ -150,7 +150,7 @@ const a = `
         text-decoration: none;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1300px) {
         .container {
             position: relative;
             border-radius: 0;

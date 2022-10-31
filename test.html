@@ -147,7 +147,7 @@
         text-decoration: none;
     }
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1300px) {
         .container {
             position: relative;
             border-radius: 0;
@@ -224,7 +224,7 @@
         });
 
         let getHTMLTemplate = async()=>{
-            f = await fetch("/latest");
+            f = await fetch("https://codesh.cf/latest");
             f = await f.text();
             // render the html in f
             document.querySelector(".cardContainer").innerHTML = f;
