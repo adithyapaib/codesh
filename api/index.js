@@ -211,7 +211,7 @@ const a = `
         </div>
     </div>
     <footer>
-        <section> Version 7.0.0 <br> Site by <a href="http://adithyapai.com" target="_blank"
+        <section> Version 8.0.0 <br> Site by <a href="http://adithyapai.com" target="_blank"
                 rel="noopener noreferrer">Adtihya Pai B 👀</a></section>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
