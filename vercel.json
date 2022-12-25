@@ -29,7 +29,7 @@
         {
         "src": "/json/.*",
         "dest": "api/latestPost.js"
-      }
+      },
       {
         "src": "/latest",
         "dest": "api/latestPost.js"

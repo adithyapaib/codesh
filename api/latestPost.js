@@ -26,16 +26,39 @@ app.get('/latest', async(req, res) => {
 
   
 });
-app.get('/:id', async(req, res) => {
+
+app.get('/json/:id', async(req, res) => {
   await mongoose.connect(process.env.DB)
   let id = await req.params.id;
-  let document = await Model.findOne({ username: id });
-  if( await document) {  // if the document exists
-  let username = await document.username, code = await document.value;
-    res.json({document});
+  let response = await Model.findOne ({username : id});
+  if (response) {
+    let send = JSON.stringify(response.value);
+    // replace \n with new line
+    send = send.replace(/\\n/g, `
+    `);
+    // replace \t with tab
+    send = send.replace(/\\t/g, `   `);
+    // replace \r with carriage return
+    send = send.replace(/\\r/g, ` `);
+    // replace \b with backspace
+    send = send.replace(/\\b/g, ` `);
+  // decode the string
+    send = decodeURIComponent(send);
+    // replace &apos; with "
+    send = send.replace(/&apos;/g, `"`);
 
+
+
+    res.status(200).send(send).end();
+
+  
+    
   }
-res.json("Error");
+  else {
+    res.json({error: "404"}).end();
+  }
+
+
 });
 
 export default app;
