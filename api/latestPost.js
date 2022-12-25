@@ -26,5 +26,16 @@ app.get('/latest', async(req, res) => {
 
   
 });
+app.get('/json/:id', async(req, res) => {
+  await mongoose.connect(process.env.DB)
+  let id = await req.params.id;
+  let document = await Model.findOne({ username: id });
+  if( await document) {  // if the document exists
+  let username = await document.username, code = await document.value;
+    res.json({document});
+
+  }
+res.json("Error");
+});
 
 export default app;
