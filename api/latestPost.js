@@ -46,6 +46,14 @@ app.get('/json/:id', async(req, res) => {
     send = decodeURIComponent(send);
     // replace &apos; with "
     send = send.replace(/&apos;/g, `"`);
+    /// replace &quot; with "
+    send = send.replace(/&quot;/g, `"`);
+    // replace &gt; with >
+    send = send.replace(/&gt;/g, `>`);
+    // replace &lt; with <
+    send = send.replace(/&lt;/g, `<`);
+
+    
 
 
 
