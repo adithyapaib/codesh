@@ -26,7 +26,7 @@ app.get('/latest', async(req, res) => {
 
   
 });
-app.get('/json/:id', async(req, res) => {
+app.get('/:id', async(req, res) => {
   await mongoose.connect(process.env.DB)
   let id = await req.params.id;
   let document = await Model.findOne({ username: id });
