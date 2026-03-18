@@ -1,217 +1,149 @@
-export default async function newFn (username) {
-	console.log('Inside newFn' + username);
-	return `
-	<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-	@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,600;1,700;1,800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap);
-	* {
-		margin: 0;
-		padding: 0;
-		font-family: Montserrat, sans-serif
-	}
-	
-	body {
-		background-color: #171717;
-		margin: 0;
-		max-width: 100% !important;
-		font-family: Poppins, sans-serif
-	}
-	
-	.wrapper {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		padding: 1rem .5rem;
-		font-size: 1rem;
-		background-color: #171717
-	}
-	
-	#code-display {
-		padding-top: 0;
-		padding-bottom: 0;
-		color: #fff
-	}
-	
-	textarea {
-		max-width: 100%;
-		width: 100vw;
-		background-color: #080808;
-		resize: none;
-		width: 100%;
-		padding: 0;
-		margin-left: 1rem;
-		color: #fff;
-		min-height: calc(100vh - 2rem);
-		border: none;
-		font-size: 1.5em !important;
-		outline: 0;
-		font-family: Poppins sans-serif;
-	}
-	
-	.btn {
-		cursor: pointer;
-		background: 0 0;
-		border: 1px solid #002b36;
-		color: #002b36;
-		border-radius: .25rem;
-		padding: .25rem .5rem;
-		-webkit-transition: background-color .2s ease-in-out;
-		transition: background-color .2s ease-in-out;
-		display: inline-block;
-		text-decoration: none
-	}
-	
-	.btn:hover {
-		background-color: #83e5ff
-	}
-	
-	* {
-		color: #fff !important
-	}
-	
-	p {
-		margin-left: 1em
-	}
-	
-	.menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		padding: 1rem
-	}
-	
-	.newheader {
-		top: 0;
-		position: -webkit-sticky;
-		position: sticky;
-		background: #ffd523;
-		color: #2c2e43 !important;
-		max-width: 100%;
-		padding: 1em;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center
-	}
-	
-	.newheader h1 {
-		margin-left: .5em;
-		color: #2c2e43 !important;
-		font-size: 1.5em
-	}
-	
-	.newheader span {
-		min-width: 10%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: space-evenly;
-		-ms-flex-pack: space-evenly;
-		justify-content: space-evenly;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		align-items: center;
-		font-size: 1.5em
-	}
-	
-	.newheader span .btn {
-		background: red
-	}
-	
-	.newheader span i {
-		margin-left: 1em;
-		color: #2c2e43 !important
-	}
-	
-	.newheader span .btn {
-		background: #0a1931;
-		font-size: .6em;
-		font-weight: 600;
-		padding: .5em 1em
-	}
-	
-	.newheader span .btn i {
-		color: #f5f5f5 !important
-	}
-	
-	.wrapper {
-		margin: 0;
-		padding: 0
-	}
-	
-	.wrapper .textarea {
-		background: #171717;
-		font-family: Poppins, sans-serif;
-		padding: 1em;
-		font-size: .9em;
-		margin: 0
-	}
-	
-	::-webkit-scrollbar {
-		background: #171717;
-		padding: 10em;
-		width: 10px
-	}
-	
-	::-webkit-scrollbar-thumb {
-		margin: 2em;
-		background: #ffd523;
-		border-radius: .5em
-	}
-	
-	@media screen and (max-width: 600px) {
-		.newheader h1 {
-			font-size: 0.8em;
-		}
-	}
-	</style>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js" integrity="sha512-zibtOTbkMuTivXGk5b8yJFGLIB1jF90NuV7gwNcVWL3xZx/I1HdkXU2pCZhadsuaS5HMUzabvRqK4WmWeKrwUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<title>Editing ${username}</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script language="javascript" type="text/javascript" src="/static/js/codemirror-5.62.0/lib/codemirror.js"></script>
-	<link rel="stylesheet" type="text/css" href="/static/js/codemirror-5.62.0/lib/codemirror.css"> </link>
-	<link rel="icon" href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png" />
-</head>
-
-<body>
-	<form action="/save" method="POST">
-		<header class="newheader"> <span> <i class="bi bi-pencil-square" style="color: black;"></i> <h1>${username}</h1> </span> <span><button class="btn" type="submit">Save <i class="bi bi-clipboard"></i></button> <a href="/"><i class="bi bi-house-fill"></i></span></a>
-		</header>
-		<div class="wrapper">
-			<textarea id="code" autofocus name="value" class="textarea" placeholder="Type something"></textarea>
-			<input type="text" style="display: none;" name="username" value=${username}> </div>
-		</div>
-	</form>
-	<script>
-	autosize(document.querySelector('textarea'));
-	var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-		lineNumbers: true,
-		mode: 'text/x-perl',
-		matchBrackets: true,
-	});
-	</script>
-</body>
-
-</html>
-	`
+export default async function newFn(username) {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Editing /${username} | codesh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Midnight Premium Theme */
+        --bg: oklch(0.12 0.02 260); 
+        --surface: oklch(0.17 0.03 260); 
+        --surface-hover: oklch(0.21 0.03 260); 
+        
+        --fg: oklch(0.98 0.01 260); 
+        --fg-muted: oklch(0.65 0.02 260); 
+        
+        --brand: oklch(0.75 0.18 20);     /* Neon coral */
+        --brand-hover: oklch(0.85 0.15 20);
+        
+        --accent-teal: oklch(0.80 0.15 190);   /* Cyber cyan */
+        --accent-pink: oklch(0.70 0.22 330);   /* Neon pink */
+        
+        --border: oklch(0.25 0.03 260); 
+        --error: oklch(0.65 0.20 25);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'Space Grotesk', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: clamp(1rem, 3vw, 2rem);
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      
+      .header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--fg);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .header h1::before {
+        content: '/';
+        color: var(--brand);
+      }
+      .actions {
+        display: flex;
+        gap: 1rem;
+      }
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--fg);
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: var(--surface-hover);
+        border-color: var(--accent-teal);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-teal) 15%, transparent);
+      }
+      .btn.primary {
+        background: var(--brand);
+        color: #fff;
+        border-color: var(--brand);
+      }
+      .btn.primary:hover {
+        background: var(--brand-hover);
+        box-shadow: 0 4px 24px color-mix(in srgb, var(--brand) 25%, transparent);
+      }
+      .editor-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      
+      #code-input {
+        flex: 1;
+        width: 100%;
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        resize: none;
+        background: var(--surface);
+        color: var(--fg);
+        outline: none;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #code-input:focus {
+        border-color: var(--accent-teal);
+        background: var(--surface-hover);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent-teal) 10%, transparent);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/save" method="POST" class="editor-container">
+      <header class="header">
+        <h1>${username}</h1>
+        <div class="actions">
+          <button type="submit" class="btn primary">Save Code</button>
+          <a href="/" class="btn">Cancel</a>
+        </div>
+      </header>
+      <input type="hidden" name="username" value="${username}">
+      <textarea name="value" id="code-input" autofocus placeholder="Paste your code snippet here..." spellcheck="false"></textarea>
+    </form>
+    <script>
+      const textarea = document.getElementById('code-input');
+      textarea.addEventListener('keydown', function(e) {
+        if(e.key == 'Tab') {
+          e.preventDefault();
+          var start = this.selectionStart;
+          var end = this.selectionEnd;
+          this.value = this.value.substring(0, start) + "    " + this.value.substring(end);
+          this.selectionStart = this.selectionEnd = start + 4;
+        }
+      });
+    </script>
+  </body>
+  </html>
+  `;
 }

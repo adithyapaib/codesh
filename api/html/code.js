@@ -1,44 +1,137 @@
 export default async function codeFn(username, code) {
-    return await `
-
-    <!DOCTYPE html>
-    <html lang="en">
-       <head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");*{margin: 0; padding: 0; font-family: "Poppins", sans-serif; max-width: 100%;}body{background-color: #171717;}.newheader{top: 0; position: -webkit-sticky; position: sticky; z-index: 10000; background: #ffd523; color: #2c2e43 !important; max-width: 100%; padding: 1em; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center;}.newheader h3{margin-left: 0.5em; color: #2c2e43 !important; font-size: 1em;}.newheader span{min-width: 10%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 1.5em;}.newheader span .btn{background: red;}.newheader span .copy{background: #0a1931; padding: 0.6em; border-radius: 0.5em; color: #fff; border: none; cursor: pointer; outline: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center;}.newheader span .copy i{color: #fff !important;}.newheader span i{margin-left: 1em; color: #2c2e43 !important;}.newheader span .btn{background: #0a1931; font-size: 0.6em; font-weight: 600; padding: 0.5em 1em;}.newheader span .btn i{color: whitesmoke !important;}.wrapper{position: relative; margin-top: 10em; padding: 1em; min-height: 100vh; max-width: 100% !important; background: #171717; color: whitesmoke;}.wrapper p{max-width: 100vw !important; word-wrap: break-word;}.wrapper p a{color: #41e033; text-decoration: none;}.wrapper p a::after{content: " ↥";}::-webkit-scrollbar{background: #171717; padding: 10em; width: 10px;}::-webkit-scrollbar-thumb{margin: 2em; background: #ffd523; border-radius: 0.5em;}</style>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js"></script> 
-          <title>${username}</title>
-          <meta name="description" content="${username}">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"/>
-          <script language="javascript" type="text/javascript" src="/static/js/codemirror-5.62.0/lib/codemirror.js"></script> 
-          <link rel="stylesheet" type="text/css" href="/static/js/codemirror-5.62.0/lib/codemirror.css">
-          </link> 
-          <link rel="icon" href="https://img.icons8.com/emoji/48/000000/flower-playing-cards.png"/>
-       </head>
-       <body >
-          <header class="newheader">
-             <span>
-                <i class="bi bi-back" style="color: black;"></i>
-                <h3>${username}</h3>
-             </span>
-             <span> <button class="copy" id="copyText"  style="margin-right: 10px;">Copy<i class="bi bi-clipboard"></i> </button> <a href="/"><i class="bi bi-house-fill"></i></span></a> 
-          </header>
-          <div class="wrapper">
-             <pre class="codeheader" id="code">${code}</pre>
-          </div>
-          <script>
-            document.getElementById("copyText").addEventListener("click", function() {
-                var textArea = document.createElement("textarea");
-                textArea.value = document.getElementById("code").textContent;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("copy");
-                textArea.remove();
-                window.alert("Copied the text !");
-            });
-          </script>
-       </body>
-    </html>`
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>${username} | codesh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Midnight Premium Theme */
+        --bg: oklch(0.12 0.02 260); 
+        --surface: oklch(0.17 0.03 260); 
+        --surface-hover: oklch(0.21 0.03 260); 
+        
+        --fg: oklch(0.98 0.01 260); 
+        --fg-muted: oklch(0.65 0.02 260); 
+        
+        --brand: oklch(0.75 0.18 20);     /* Neon coral */
+        --accent-teal: oklch(0.80 0.15 190);   /* Cyber cyan */
+        
+        --border: oklch(0.25 0.03 260); 
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'Space Grotesk', -apple-system, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: clamp(1rem, 3vw, 2rem);
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--fg);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .header h1::before {
+        content: '/';
+        color: var(--brand);
+      }
+      .actions {
+        display: flex;
+        gap: 1rem;
+      }
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--fg);
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        text-decoration: none;
+      }
+      .btn:hover {
+        background: var(--surface-hover);
+        border-color: var(--accent-teal);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-teal) 15%, transparent);
+      }
+      .code-container {
+        flex: 1;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+      .code-container::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, transparent, color-mix(in srgb, var(--accent-teal) 5%, transparent));
+        pointer-events: none;
+        z-index: 0;
+      }
+      pre {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--fg);
+        padding: 2rem;
+        white-space: pre-wrap;
+        word-break: break-all;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>${username}</h1>
+      <div class="actions">
+        <button id="copyBtn" class="btn">Copy Snippet</button>
+        <a href="/" class="btn">Home</a>
+      </div>
+    </header>
+    <div class="code-container">
+      <pre id="codeBlock">${code}</pre>
+    </div>
+    <script>
+      document.getElementById('copyBtn').addEventListener('click', (e) => {
+        const text = document.getElementById('codeBlock').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          e.target.innerText = "Copied!";
+          setTimeout(() => e.target.innerText = "Copy Snippet", 2000);
+        });
+      });
+    </script>
+  </body>
+  </html>
+  `;
 }
